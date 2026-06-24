@@ -50,7 +50,7 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
             hasScrollBody: false,
             child: Center(
               child: CircularProgressIndicator(
-                color: Colors.blue,
+                backgroundColor: Colors.grey,
               ),
             ),
           ); 
