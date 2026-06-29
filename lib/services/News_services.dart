@@ -19,7 +19,10 @@ String normalizeNewsApiCategory(String raw) {
 }
 
 class NewsServices {
+
   final Dio dio;
+
+  final String baseUrl = "https://newsapi.org/v2";
 
   NewsServices(this.dio);
 
@@ -27,7 +30,7 @@ class NewsServices {
     final categoryParam = normalizeNewsApiCategory(category);
     try {
       final response = await dio.get(
-        "https://newsapi.org/v2/top-headlines",
+        "$baseUrl/top-headlines",
         queryParameters: {
           "country": "us",
           "apiKey": dotenv.env['NEWS_API_KEY'],
